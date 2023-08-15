@@ -1,10 +1,18 @@
-import { useState } from 'react'
+import { useAppDispatch, useAppSelector } from './app/hooks'
+import { incremented } from './features/counter/counterSlice'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  // grab the current counter value to display
+  const count = useAppSelector((state) => state.counter.value);
+  const dispatch = useAppDispatch();
+
+  const handleClick = () => {
+    // dispatch whatever is returned by the incremented action creator
+    dispatch(incremented())
+  }
 
   return (
     <>
@@ -18,7 +26,7 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
+        <button onClick={handleClick}>
           count is {count}
         </button>
         <p>
