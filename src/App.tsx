@@ -1,5 +1,5 @@
 import { useAppDispatch, useAppSelector } from './app/hooks'
-import { incremented } from './features/counter/counterSlice'
+import { incremented, amountAdded } from './features/counter/counterSlice'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -11,7 +11,11 @@ function App() {
 
   const handleClick = () => {
     // dispatch whatever is returned by the incremented action creator
-    dispatch(incremented())
+    // increment by 1
+    // dispatch(incremented())
+
+    // increment by fixed amount
+    dispatch(amountAdded(5));
   }
 
   return (

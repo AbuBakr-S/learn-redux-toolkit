@@ -21,6 +21,10 @@ const counterSlice = createSlice({
     incremented(state) {
       // * redux toolkit's immer library applies mutable code, immutably
       state.value++;
+    },
+    // specific amount added
+    amountAdded(state, action: PayloadAction<number>) {
+      state.value += action.payload;
     }
     // decrement
     // reset
@@ -32,6 +36,6 @@ const counterSlice = createSlice({
 
 // countetSlice has a reducerFn and an action creator for each of the fns in the reducers field
 
-export const { incremented } = counterSlice.actions;
+export const { incremented, amountAdded } = counterSlice.actions;
 
 export default counterSlice.reducer;
