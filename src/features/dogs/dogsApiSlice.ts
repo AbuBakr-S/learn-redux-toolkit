@@ -10,8 +10,7 @@ interface Breed {
   }
 }
 
-export const dogsApiSlice = createApi(
-  {
+export const dogsApiSlice = createApi({
   reducerPath: 'api',  // helps our code know where we're keeping our data
   baseQuery: fetchBaseQuery({
     baseUrl: 'https://api.thedogapi.com/v1',

@@ -1,3 +1,4 @@
+// Create pre-defined versions of React Redux hooks that already know the right types for our state and dispatch
 import { TypedUseSelectorHook, useSelector, useDispatch } from 'react-redux';
 import { RootState, AppDispatch } from './store';
 
